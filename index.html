@@ -50,38 +50,6 @@
                         <li><a class="tag_menu" href="magaza.html">MAĞAZA</a></li>
                         <li><a class="tag_menu" href="iletisim.html">İLETİŞİM</a></li>
                     </ul>
-                    
-                    <section id="side_box">
-                        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-list"></i></a>
-                        <div id="sidebar-wrapper" class="">
-                            <ul class="sidebar-nav">
-                                <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="glyphicon glyphicon-remove"></i></a>
-                                <li class="sidebar-brand">
-                                    <a href="index.html">24 ERZINCANSPOR</a>
-                                </li>
-                            </ul>
-                            <div class="wrap_inner clearfix text-center">
-                                <img src="img/5.png" alt="24 Erzincanspor" class="iw">
-                                <p class="para_1">1968'den bu yana Erzincan'ın gururu, şehrin kalbi.</p>
-                                <div class="top_right clearfix">
-                                    <p>
-                                        <a href="https://www.instagram.com/a24erzincanspor/?hl=tr" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="https://www.facebook.com/ErzincanSpor24/?locale=tr_TR" target="_blank"><i class="fa fa-facebook"></i></a>
-                                        <a href="https://x.com/ErzincanSpor24" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="https://www.youtube.com/c/anagold24erzincanspor" target="_blank"><i class="fa fa-youtube"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="wrap_inner_2 clearfix">
-                                <h3>Bize Ulaşın</h3>
-                                <input class="form-control" placeholder="Adınız" type="text">
-                                <input class="form-control" placeholder="E-posta" type="email">
-                                <input class="form-control" placeholder="Telefon" type="tel">
-                                <textarea class="form-control form_1" placeholder="Mesajınız"></textarea>
-                                <h5 class="text-center"><a class="button" href="#">Gönder <i class="fa fa-chevron-right"></i></a></h5>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </div>
@@ -466,7 +434,6 @@
                             <span class="col"><i class="fa fa-history"></i></span>
                             <h3 class="bold col">Tarihçemiz</h3>
                             <p class="col">1968 yılında kurulan kulübümüz, Erzincan futbolunun simgesi olmuştur.</p>
-                            <h5><a class="button" href="hakkimizda.html">DAHA FAZLA <i class="fa fa-chevron-right"></i></a></h5>
                         </div>
                     </div>
                 </div>
@@ -479,7 +446,6 @@
                             <span class="col"><i class="fa fa-building"></i></span>
                             <h3 class="bold col">Stadyumumuz</h3>
                             <p class="col">15.000 kişilik Yeni Erzincan Stadyumu, modern altyapısıyla hizmet vermektedir.</p>
-                            <h5><a class="button" href="hakkimizda.html">DAHA FAZLA <i class="fa fa-chevron-right"></i></a></h5>
                         </div>
                     </div>
                 </div>
@@ -492,7 +458,6 @@
                             <span class="col"><i class="fa fa-users"></i></span>
                             <h3 class="bold col">Altyapımız</h3>
                             <p class="col">Geleceğin yıldızları için profesyonel altyapı eğitimi veriyoruz.</p>
-                            <h5><a class="button" href="kadro.html">DAHA FAZLA <i class="fa fa-chevron-right"></i></a></h5>
                         </div>
                     </div>
                 </div>
@@ -698,11 +663,12 @@
                     <h1 class="mgt">Bültenimize Katılın</h1>
                     <p>En güncel haberler, maç sonuçları ve özel kampanyalar için e-bültenimize abone olun.</p>
                     <div class="input-group">
-                        <input type="email" class="form-control" placeholder="E-posta adresiniz">
+                        <input type="email" class="form-control" id="newsletterEmail" placeholder="E-posta adresiniz">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">ABONE OL</button>
+                            <button class="btn btn-primary" type="button" id="subscribeBtn">ABONE OL</button>
                         </span>
                     </div>
+                    <div id="subscribeMessage" style="display: none; margin-top: 20px; font-size: 18px; font-weight: bold; color: #FFD700;"></div>
                 </div>
             </div>
         </div>
@@ -832,6 +798,45 @@
     // Sayfa yüklendiğinde sepeti güncelle
     $(document).ready(function() {
         updateHeaderCart();
+        
+        // Bülten abonelik işlemi
+        $('#subscribeBtn').click(function() {
+            var email = $('#newsletterEmail').val().trim();
+            var messageDiv = $('#subscribeMessage');
+            
+            if (email === '') {
+                messageDiv.text('Lütfen e-posta adresinizi girin!').css('color', '#ff4444').fadeIn();
+                setTimeout(function() {
+                    messageDiv.fadeOut();
+                }, 3000);
+                return;
+            }
+            
+            // E-posta formatı kontrolü
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                messageDiv.text('Geçerli bir e-posta adresi girin!').css('color', '#ff4444').fadeIn();
+                setTimeout(function() {
+                    messageDiv.fadeOut();
+                }, 3000);
+                return;
+            }
+            
+            // Başarılı mesajı
+            messageDiv.text('✓ Abone oldunuz! Teşekkür ederiz.').css('color', '#FFD700').fadeIn();
+            $('#newsletterEmail').val('');
+            
+            setTimeout(function() {
+                messageDiv.fadeOut();
+            }, 5000);
+        });
+        
+        // Enter tuşu ile de abone olabilme
+        $('#newsletterEmail').keypress(function(e) {
+            if (e.which === 13) {
+                $('#subscribeBtn').click();
+            }
+        });
     });
 </script>
 
