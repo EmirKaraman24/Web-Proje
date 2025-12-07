@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>window.scrollTo(0,0);</script>
+    <meta name="description" content="24 Erzincanspor Resmi Mağaza - Forma, Atkı ve Lisanslı Ürünler">
+    <title>Mağaza - 24 Erzincanspor</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/shop.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- Header -->
+<section id="header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Menüyü Aç</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <i class="fa fa-futbol-o"></i> 24 ERZINCAN<span>SPOR</span>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="tag_menu" href="index.html">ANA SAYFA</a></li>
+                        <li class="dropdown">
+                            <a class="tag_menu" href="#" data-toggle="dropdown">KULÜP <span class="caret"></span></a>
+                            <ul class="dropdown-menu drop_1" role="menu">
+                                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                                <li><a href="kadro.html">Kadro</a></li>
+                                <li><a href="istatistikler.html">İstatistikler</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="tag_menu" href="haberler.html">HABERLER</a></li>
+                        <li><a class="tag_menu active_tab" href="magaza.html">MAĞAZA</a></li>
+                        <li><a class="tag_menu" href="iletisim.html">İLETİŞİM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<!-- Hero Section -->
+<section id="center" class="clearfix center_contact center_shop">
+    <div class="center_about_m clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="gallery_h text-center mgt1 clearfix">
+                    <div class="col-sm-12">
+                        <h1 class="mgt col">Resmi Mağaza</h1>
+                        <hr>
+                        <p class="col">24 Erzincanspor resmi lisanslı ürünleri</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Shop Section -->
+<section id="shop_page">
+    <div class="container">
+        <div class="row">
+            <!-- Category Filter -->
+            <div class="col-sm-12">
+                <div class="category-buttons">
+                    <button class="btn btn-primary active" data-category="all">Tümü</button>
+                    <button class="btn btn-default" data-category="forma">Formalar</button>
+                    <button class="btn btn-default" data-category="aksesuar">Aksesuarlar</button>
+                    <button class="btn btn-default" data-category="esofman">Eşofman</button>
+                    <button class="btn btn-default" data-category="cocuk">Çocuk</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="col-sm-9">
+                <div class="row" id="products-grid">
+                    <!-- Ürünler JavaScript ile yüklenecek -->
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-sm-3">
+                <div class="cart-sidebar" id="cart-sidebar">
+                    <h4><i class="fa fa-shopping-cart"></i> Sepetiniz</h4>
+                    <div id="cart-items">
+                        <p class="empty-cart-msg">Sepetiniz boş.</p>
+                    </div>
+                    <div class="cart-total" id="cart-total-section" style="display: none;">
+                        <h3>Toplam: <span id="cart-total">₺0</span></h3>
+                        <button class="btn btn-primary btn-block" style="margin-top: 15px; border-radius: 25px;" onclick="checkout()">Satın Al</button>
+                        <button class="btn btn-default btn-block" style="border-radius: 25px;" onclick="clearCart()">Sepeti Temizle</button>
+                    </div>
+                </div>
+                
+                <div class="shop-filter" style="margin-top: 30px;">
+                    <h4><i class="fa fa-filter"></i> Filtrele</h4>
+                    <div class="form-group">
+                        <label>Fiyat Aralığı</label>
+                        <select class="form-control" id="price-filter">
+                            <option value="all">Tümü</option>
+                            <option value="0-100">0 - 100 TL</option>
+                            <option value="100-300">100 - 300 TL</option>
+                            <option value="300-500">300 - 500 TL</option>
+                            <option value="500+">500+ TL</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-block" onclick="applyFilters()">Filtrele</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer_1 clearfix">
+                <div class="col-sm-3">
+                    <div class="footer_1_i clearfix">
+                        <h4 class="col bold mgt">24 Erzincanspor</h4>
+                        <p>1968 yılında kurulan 24 Erzincanspor, Erzincan ilinin en köklü futbol kulübüdür.</p>
+                        <h5 class="col"><i class="fa fa-phone"></i> +90 446 XXX XX XX</h5>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_1_i clearfix">
+                        <h4 class="col bold mgt">Son Haberler</h4>
+                        <div class="footer_1_ii clearfix">
+                            <h5 class="col mgt"><a href="magaza.html">Yeni Sezon Formaları</a> <span>04 ARA 2024</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_1_i1 clearfix">
+                        <h4 class="col bold mgt">Hızlı Linkler</h4>
+                        <h5><a href="hakkimizda.html"><i class="fa fa-chevron-right"></i> Hakkımızda</a></h5>
+                        <h5><a href="kadro.html"><i class="fa fa-chevron-right"></i> Kadro</a></h5>
+                        <h5><a href="iletisim.html"><i class="fa fa-chevron-right"></i> İletişim</a></h5>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer_1_i2 clearfix">
+                        <h4 class="col bold mgt">Bizi Takip Edin</h4>
+                        <ul class="social-network social-circle">
+                            <li><a href="https://www.facebook.com/ErzincanSpor24/?locale=tr_TR" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://x.com/ErzincanSpor24" target="_blank" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/a24erzincanspor/?hl=tr" target="_blank" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/anagold24erzincanspor" target="_blank" class="icoYoutube" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_2 text-center clearfix">
+                <div class="col-sm-12">
+                    <p class="mgt col">© 2024 24 Erzincanspor Futbol Kulübü. Tüm Hakları Saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Ürün verileri
+const products = [
+    { id: 1, name: "Parçalı Forma 2024-25", price: 450, image: "img/30.png", category: "forma", badge: "YENİ", stars: 5 },
+    { id: 2, name: "Deplasman Forması 2024-25", price: 450, image: "img/31.png", category: "forma", badge: "YENİ", stars: 4.5 },
+    { id: 3, name: "Resmi Taraftar Atkısı", price: 75, image: "img/32.png", category: "aksesuar", badge: null, stars: 5 },
+    { id: 4, name: "Kışlık Bere", price: 48, oldPrice: 60, image: "img/33.png", category: "aksesuar", badge: "%20 İNDİRİM", stars: 4 },
+    { id: 5, name: "Antrenman Eşofman Takımı", price: 350, image: "img/34.png", category: "esofman", badge: null, stars: 4.5 },
+    { id: 6, name: "Kaleci Forması 2024-25", price: 500, image: "img/35.png", category: "forma", badge: "YENİ", stars: 5 },
+    { id: 7, name: "Çocuk Forması 2024-25", price: 350, image: "img/36.png", category: "cocuk", badge: null, stars: 5 },
+    { id: 8, name: "Resmi Şapka", price: 65, image: "img/37.png", category: "aksesuar", badge: null, stars: 4 },
+    { id: 9, name: "Resmi Futbol Topu", price: 250, image: "img/38.png", category: "aksesuar", badge: null, stars: 5 }
+];
+
+// Sepet - localStorage'dan yükle
+let cart = JSON.parse(localStorage.getItem('erzincanspor_cart')) || [];
+
+// Sayfa yüklendiğinde
+$(document).ready(function() {
+    renderProducts(products);
+    updateCartUI();
+    
+    // Kategori butonları
+    $(".category-buttons .btn").click(function() {
+        $(".category-buttons .btn").removeClass("btn-primary active").addClass("btn-default");
+        $(this).removeClass("btn-default").addClass("btn-primary active");
+        
+        const category = $(this).data("category");
+        filterProducts(category);
+    });
+});
+
+// Ürünleri render et
+function renderProducts(productList) {
+    let html = '';
+    productList.forEach(product => {
+        const starsHtml = getStarsHtml(product.stars);
+        const badgeHtml = product.badge ? `<span class="product-badge ${product.badge.includes('İNDİRİM') ? 'sale' : ''}">${product.badge}</span>` : '';
+        const priceHtml = product.oldPrice 
+            ? `₺${product.price} <span class="old-price">₺${product.oldPrice}</span>` 
+            : `₺${product.price}`;
+        
+        html += `
+            <div class="col-sm-4 product-item" data-category="${product.category}" data-price="${product.price}">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${badgeHtml}
+                    </div>
+                    <div class="product-info">
+                        <h4>${product.name}</h4>
+                        <div class="stars">${starsHtml}</div>
+                        <div class="price">${priceHtml}</div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-cart" onclick="addToCart(${product.id})">
+                            <i class="fa fa-shopping-cart"></i> Sepete Ekle
+                        </button>
+                        <button class="btn btn-wishlist" onclick="toggleWishlist(this)">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    $("#products-grid").html(html);
+}
+
+// Yıldızları oluştur
+function getStarsHtml(rating) {
+    let html = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= Math.floor(rating)) {
+            html += '<i class="fa fa-star"></i>';
+        } else if (i - 0.5 <= rating) {
+            html += '<i class="fa fa-star-half-o"></i>';
+        } else {
+            html += '<i class="fa fa-star-o"></i>';
+        }
+    }
+    return html;
+}
+
+// Ürünleri filtrele
+function filterProducts(category) {
+    if (category === 'all') {
+        renderProducts(products);
+    } else {
+        const filtered = products.filter(p => p.category === category);
+        renderProducts(filtered);
+    }
+}
+
+// Fiyat filtreleme
+function applyFilters() {
+    const priceRange = $("#price-filter").val();
+    let filtered = [...products];
+    
+    if (priceRange !== 'all') {
+        if (priceRange === '500+') {
+            filtered = filtered.filter(p => p.price >= 500);
+        } else {
+            const [min, max] = priceRange.split('-').map(Number);
+            filtered = filtered.filter(p => p.price >= min && p.price <= max);
+        }
+    }
+    
+    renderProducts(filtered);
+}
+
+// Sepete ürün ekle
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: 1
+        });
+    }
+    
+    saveCart();
+    updateCartUI();
+    showNotification(`${product.name} sepete eklendi!`);
+}
+
+// Sepetten ürün çıkar
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    saveCart();
+    updateCartUI();
+}
+
+// Sepeti temizle
+function clearCart() {
+    if (confirm('Sepeti temizlemek istediğinizden emin misiniz?')) {
+        cart = [];
+        saveCart();
+        updateCartUI();
+    }
+}
+
+// Sepeti localStorage'a kaydet
+function saveCart() {
+    localStorage.setItem('erzincanspor_cart', JSON.stringify(cart));
+}
+
+// Sepet UI'ını güncelle
+function updateCartUI() {
+    const cartItemsEl = $("#cart-items");
+    const headerCartItemsEl = $("#header-cart-items");
+    const cartTotalEl = $("#cart-total");
+    const headerCartTotalEl = $("#header-cart-total");
+    const cartCountEl = $(".header-cart-count");
+    const cartTotalSection = $("#cart-total-section");
+    
+    if (cart.length === 0) {
+        cartItemsEl.html('<p class="empty-cart-msg">Sepetiniz boş.</p>');
+        headerCartItemsEl.html('<p class="empty-cart-msg">Sepetiniz boş.</p>');
+        cartTotalSection.hide();
+        cartCountEl.text('0');
+        cartTotalEl.text('₺0');
+        headerCartTotalEl.text('₺0');
+        return;
+    }
+    
+    let total = 0;
+    let totalItems = 0;
+    let cartHtml = '';
+    let headerCartHtml = '';
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        totalItems += item.quantity;
+        
+        cartHtml += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-info">
+                    <h5>${item.name}</h5>
+                    <span>₺${item.price} x ${item.quantity}</span>
+                </div>
+                <i class="fa fa-times remove-btn" onclick="removeFromCart(${item.id})"></i>
+            </div>
+        `;
+        
+        headerCartHtml += `
+            <div class="cart-item" style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee;">
+                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px; margin-right: 10px;">
+                <div class="cart-item-info">
+                    <h5 style="margin: 0; font-size: 14px;">${item.name}</h5>
+                    <span style="color: var(--primary-color);">₺${item.price} x ${item.quantity}</span>
+                </div>
+            </div>
+        `;
+    });
+    
+    cartItemsEl.html(cartHtml);
+    headerCartItemsEl.html(headerCartHtml);
+    cartTotalEl.text(`₺${total}`);
+    headerCartTotalEl.text(`₺${total}`);
+    cartCountEl.text(totalItems);
+    cartTotalSection.show();
+}
+
+// Satın al
+function checkout() {
+    if (cart.length === 0) {
+        alert('Sepetiniz boş!');
+        return;
+    }
+    
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    alert(`Siparişiniz alındı!\nToplam: ₺${total}\n\nTeşekkür ederiz!`);
+    cart = [];
+    saveCart();
+    updateCartUI();
+}
+
+// Sepete kaydır
+function scrollToCart() {
+    $('html, body').animate({
+        scrollTop: $("#cart-sidebar").offset().top - 100
+    }, 500);
+}
+
+// Favori toggle
+function toggleWishlist(btn) {
+    $(btn).find("i").toggleClass("fa-heart-o fa-heart");
+    const isAdded = $(btn).find("i").hasClass("fa-heart");
+    showNotification(isAdded ? 'Favorilere eklendi!' : 'Favorilerden çıkarıldı!');
+}
+
+// Bildirim göster
+function showNotification(message) {
+    // Mevcut bildirimi kaldır
+    $(".shop-notification").remove();
+    
+    // Yeni bildirim oluştur
+    const notification = $(`
+        <div class="shop-notification" style="
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+        ">
+            <i class="fa fa-check-circle"></i> ${message}
+        </div>
+    `);
+    
+    $("body").append(notification);
+    
+    setTimeout(() => {
+        notification.fadeOut(300, function() {
+            $(this).remove();
+        });
+    }, 2500);
+}
+
+// CSS animasyonu ekle
+$("<style>")
+    .prop("type", "text/css")
+    .html(`
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `)
+    .appendTo("head");
+</script>
+</body>
+</html>
