@@ -1,0 +1,408 @@
+/*
+24 Erzincanspor - Admin Panel CSS
+*/
+
+body.admin-body {
+    background: #f5f5f5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    background: linear-gradient(180deg, #1a1a1a, #2a2a2a);
+    min-height: 100vh;
+    padding: 0;
+    position: fixed;
+    width: 250px;
+    z-index: 1000;
+}
+
+.admin-logo {
+    background: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-logo h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 18px;
+}
+
+.admin-logo span {
+    color: var(--secondary-color);
+}
+
+.admin-nav {
+    padding: 20px 0;
+}
+
+.admin-nav a {
+    display: block;
+    color: #ccc;
+    padding: 15px 25px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border-left-color: var(--primary-color);
+}
+
+.admin-nav a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.admin-nav .nav-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 15px 25px;
+}
+
+.admin-nav .nav-label {
+    color: #666;
+    font-size: 12px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Admin Content */
+.admin-content {
+    margin-left: 250px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* Admin Header */
+.admin-header {
+    background: #fff;
+    padding: 20px 30px;
+    margin: -30px -30px 30px -30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h2 {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.admin-header .admin-user {
+    display: flex;
+    align-items: center;
+}
+
+.admin-header .admin-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.admin-header .admin-user span {
+    color: #666;
+}
+
+/* Admin Cards */
+.admin-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.admin-card h3 {
+    color: var(--primary-color);
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+.admin-card h3 i {
+    margin-right: 10px;
+}
+
+/* Stats Cards */
+.stat-card-admin {
+    background: linear-gradient(135deg, var(--primary-color), #8B0000);
+    border-radius: 10px;
+    padding: 25px;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card-admin:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card-admin.yellow {
+    background: linear-gradient(135deg, var(--secondary-color), #FFA500);
+    color: #000;
+}
+
+.stat-card-admin.dark {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+}
+
+.stat-card-admin i {
+    font-size: 40px;
+    opacity: 0.5;
+    float: right;
+}
+
+.stat-card-admin h1 {
+    color: inherit;
+    font-size: 36px;
+    margin: 0;
+}
+
+.stat-card-admin p {
+    color: inherit;
+    opacity: 0.8;
+    margin: 5px 0 0 0;
+}
+
+/* Form Styles */
+.admin-form .form-group {
+    margin-bottom: 20px;
+}
+
+.admin-form label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.admin-form .form-control {
+    border-radius: 5px;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    transition: border-color 0.3s ease;
+}
+
+.admin-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.admin-form textarea.form-control {
+    min-height: 150px;
+}
+
+.admin-form .btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+}
+
+.admin-form .btn-primary:hover {
+    background: #a00d25;
+    border-color: #a00d25;
+}
+
+/* Table Styles */
+.admin-table {
+    width: 100%;
+}
+
+.admin-table th {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover {
+    background: #f9f9f9;
+}
+
+.admin-table .action-btns a {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.admin-table .btn-edit {
+    background: var(--secondary-color);
+    color: #000;
+}
+
+.admin-table .btn-delete {
+    background: #dc3545;
+    color: #fff;
+}
+
+.admin-table .btn-view {
+    background: #17a2b8;
+    color: #fff;
+}
+
+/* File Upload */
+.file-upload {
+    border: 2px dashed #ddd;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-color);
+    background: #fafafa;
+}
+
+.file-upload i {
+    font-size: 50px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.file-upload p {
+    color: #666;
+    margin: 0;
+}
+
+/* Tabs */
+.admin-tabs {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.admin-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #666;
+    padding: 15px 25px;
+    border-radius: 0;
+}
+
+.admin-tabs .nav-link.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+/* Alert Messages */
+.admin-alert {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.admin-alert.success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.admin-alert.warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.admin-alert.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* Quick Actions */
+.quick-action {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-action:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.quick-action i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.quick-action h5 {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.quick-action p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+    .admin-sidebar {
+        width: 70px;
+    }
+    
+    .admin-sidebar .admin-logo h3,
+    .admin-nav a span,
+    .admin-nav .nav-label {
+        display: none;
+    }
+    
+    .admin-nav a i {
+        margin-right: 0;
+        font-size: 20px;
+    }
+    
+    .admin-content {
+        margin-left: 70px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .admin-sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .admin-nav {
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .admin-nav a {
+        padding: 15px;
+        white-space: nowrap;
+    }
+}
+
+

@@ -1,0 +1,172 @@
+/*
+24 Erzincanspor - İletişim Sayfası CSS
+*/
+
+/* Hero Section */
+.center_contact {
+    background: linear-gradient(rgba(200, 16, 46, 0.8), rgba(26, 26, 26, 0.9)), url('../img/8.png') center/cover fixed;
+}
+
+/* Contact Section */
+#contact_ab {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.contact_ab_1l h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact_ab_1li {
+    margin-top: 20px;
+}
+
+.contact_ab_1li h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.contact_ab_1li h5 i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.contact_ab_1r iframe {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Contact Form */
+.contact_ab_2 {
+    margin-top: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact_ab_2 h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.contact_ab_2 .form-control {
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+}
+
+.contact_ab_2 .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.contact_ab_2 .form_1 {
+    height: 150px;
+}
+
+.contact_ab_2 .button {
+    padding: 15px 40px;
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.contact-info-card i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.contact-info-card p {
+    color: #666;
+    margin: 0;
+}
+
+/* Contact Form Section */
+#contact_form {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.blod_d1l4 {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.blod_d1l4 h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+}
+
+.blod_d1l4i {
+    margin-bottom: 20px;
+}
+
+.blod_d1l4i1 {
+    margin-bottom: 20px;
+}
+
+/* FAQ Section */
+#faq {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.faq-item .faq-question {
+    padding: 20px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.faq-item .faq-question i {
+    float: right;
+    transition: transform 0.3s;
+}
+
+.faq-item .faq-answer {
+    padding: 20px;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+

@@ -1,0 +1,178 @@
+/*
+24 Erzincanspor - Kadro Sayfası CSS
+*/
+
+/* Hero Section */
+.center_contact {
+    background: linear-gradient(rgba(200, 16, 46, 0.8), rgba(26, 26, 26, 0.9)), url('../img/10.png') center/cover fixed;
+}
+
+/* Team About Section */
+#team_ab {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.team_ab_1_l h3 {
+    color: var(--primary-color);
+}
+
+.team_ab_1_l h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.team_ab_1_r img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Players Section */
+#players {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.players_1 {
+    margin-bottom: 30px;
+}
+
+.players_1i {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.players_1i:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.players_1i img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.players_1i h3 {
+    color: #333;
+    font-size: 20px;
+}
+
+.players_1i h5 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.players_1i .player-number {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: #000;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Player Categories */
+.player-category {
+    margin-bottom: 50px;
+}
+
+.player-category h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+/* Coach Section */
+.coach-card {
+    background: linear-gradient(135deg, var(--primary-color), #8B0000);
+    border-radius: 15px;
+    padding: 40px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.coach-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.coach-card h3 {
+    color: #fff;
+}
+
+.coach-card h4 {
+    color: var(--secondary-color);
+}
+
+.coach-card p {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Technical Staff */
+#technical_staff {
+    padding: 60px 0;
+    background: var(--dark-color);
+}
+
+#technical_staff h2 {
+    color: #fff;
+}
+
+#technical_staff hr {
+    border-color: var(--secondary-color);
+}
+
+.staff-card {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.staff-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.staff-card h4 {
+    color: #fff;
+}
+
+.staff-card h5 {
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .coach-card {
+        text-align: center;
+    }
+    
+    .players_1i img {
+        width: 100px;
+        height: 100px;
+    }
+}
+

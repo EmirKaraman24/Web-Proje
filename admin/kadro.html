@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>window.scrollTo(0,0);</script>
+    <title>Kadro Yönetimi - Admin Panel</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body class="admin-body">
+<!-- Admin Sidebar -->
+<div class="admin-sidebar">
+    <div class="admin-logo">
+        <h3><i class="fa fa-futbol-o"></i> 24 ERZINCAN<span>SPOR</span></h3>
+    </div>
+    <nav class="admin-nav">
+        <span class="nav-label">Ana Menü</span>
+        <a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+        <a href="haberler.html"><i class="fa fa-newspaper-o"></i> <span>Haberler</span></a>
+        <a href="kadro.html" class="active"><i class="fa fa-users"></i> <span>Kadro</span></a>
+        <a href="urunler.html"><i class="fa fa-shopping-bag"></i> <span>Ürünler</span></a>
+        
+        <div class="nav-divider"></div>
+        <span class="nav-label">Ayarlar</span>
+        <a href="../index.html" target="_blank"><i class="fa fa-globe"></i> <span>Siteye Git</span></a>
+        <a href="#" onclick="return adminLogout();"><i class="fa fa-sign-out"></i> <span>Çıkış</span></a>
+    </nav>
+</div>
+
+<!-- Admin Content -->
+<div class="admin-content">
+    <div class="admin-header">
+        <h2><i class="fa fa-users"></i> Kadro Yönetimi</h2>
+        <div class="admin-user">
+            <img src="../img/48.png" alt="Admin">
+            <span>Admin Kullanıcı</span>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Add Player Form -->
+        <div class="col-sm-5">
+            <div class="admin-card">
+                <h3><i class="fa fa-user-plus"></i> Yeni Oyuncu Ekle</h3>
+                <form class="admin-form">
+                    <div class="form-group">
+                        <label>Oyuncu Adı Soyadı *</label>
+                        <input type="text" class="form-control" placeholder="Ad Soyad" required>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Forma Numarası *</label>
+                                <input type="number" class="form-control" placeholder="Numara" min="1" max="99" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Mevki *</label>
+                                <select class="form-control" required>
+                                    <option value="">Mevki Seçin</option>
+                                    <option value="kaleci">Kaleci</option>
+                                    <option value="stoper">Stoper</option>
+                                    <option value="sag-bek">Sağ Bek</option>
+                                    <option value="sol-bek">Sol Bek</option>
+                                    <option value="defansif-orta">Defansif Orta Saha</option>
+                                    <option value="merkez-orta">Merkezi Orta Saha</option>
+                                    <option value="ofansif-orta">Ofansif Orta Saha</option>
+                                    <option value="sag-kanat">Sağ Kanat</option>
+                                    <option value="sol-kanat">Sol Kanat</option>
+                                    <option value="forvet">Forvet</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Doğum Tarihi</label>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Uyruk</label>
+                                <input type="text" class="form-control" placeholder="Ülke" value="Türkiye">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Boy (cm)</label>
+                                <input type="number" class="form-control" placeholder="180">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Kilo (kg)</label>
+                                <input type="number" class="form-control" placeholder="75">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Takım</label>
+                        <select class="form-control">
+                            <option value="a-takim">A Takım</option>
+                            <option value="u19">U19</option>
+                            <option value="u17">U17</option>
+                            <option value="u15">U15</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Oyuncu Fotoğrafı</label>
+                        <div class="file-upload">
+                            <i class="fa fa-camera"></i>
+                            <p>Fotoğraf yüklemek için tıklayın</p>
+                            <input type="file" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Özgeçmiş</label>
+                        <textarea class="form-control" rows="4" placeholder="Oyuncunun kısa özgeçmişi"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Oyuncuyu Kaydet
+                    </button>
+                    <button type="reset" class="btn btn-default">
+                        <i class="fa fa-times"></i> İptal
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Players List -->
+        <div class="col-sm-7">
+            <div class="admin-card">
+                <h3><i class="fa fa-list"></i> Mevcut Kadro</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <select class="form-control" style="display: inline-block; width: 150px; margin-right: 10px;">
+                        <option>Tüm Mevkiler</option>
+                        <option>Kaleci</option>
+                        <option>Defans</option>
+                        <option>Orta Saha</option>
+                        <option>Forvet</option>
+                    </select>
+                    <div class="input-group" style="display: inline-block; width: calc(100% - 170px);">
+                        <input type="text" class="form-control" placeholder="Oyuncu ara...">
+                    </div>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Foto</th>
+                            <th>İsim</th>
+                            <th>Mevki</th>
+                            <th>Yaş</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><img src="../img/20.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Mehmet Yılmaz</td>
+                            <td>Kaleci</td>
+                            <td>28</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editPlayer('Mehmet Yılmaz', 1, 'Kaleci', 28)">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><img src="../img/22.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Can Özkan</td>
+                            <td>Stoper</td>
+                            <td>26</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editPlayer('Can Özkan', 4, 'Stoper', 26)">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td><img src="../img/23.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Burak Kaya</td>
+                            <td>Orta Saha</td>
+                            <td>24</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editPlayer('Burak Kaya', 8, 'Orta Saha', 24)">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td><img src="../img/21.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Ahmet Demir</td>
+                            <td>Forvet</td>
+                            <td>27</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editPlayer('Ahmet Demir', 9, 'Forvet', 27)">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td><img src="../img/59.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Murat Çelik</td>
+                            <td>Orta Saha</td>
+                            <td>25</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editPlayer('Murat Çelik', 10, 'Orta Saha', 25)">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <nav style="text-align: center; margin-top: 20px;">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Technical Staff -->
+            <div class="admin-card">
+                <h3><i class="fa fa-briefcase"></i> Teknik Ekip</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>İsim</th>
+                            <th>Görev</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../img/58.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Mustafa Reşit Akçay</td>
+                            <td>Teknik Direktör</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editStaff('Mustafa Reşit Akçay', 'Teknik Direktör')">Düzenle</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../img/48.png" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"></td>
+                            <td>Ahmet Yılmaz</td>
+                            <td>Yardımcı Antrenör</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-edit" onclick="editStaff('Ahmet Yılmaz', 'Yardımcı Antrenör')">Düzenle</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Player Edit Modal -->
+<div class="modal fade" id="playerEditModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C8102E, #8B0000); color: #fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color: #fff; opacity: 1;"><span>&times;</span></button>
+                <h4 class="modal-title"><i class="fa fa-user"></i> Oyuncu Düzenle</h4>
+            </div>
+            <div class="modal-body" style="padding: 25px;">
+                <form id="playerEditForm">
+                    <div class="form-group">
+                        <label><i class="fa fa-user"></i> Ad Soyad</label>
+                        <input type="text" class="form-control" id="playerEditName" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-hashtag"></i> Forma Numarası</label>
+                        <input type="number" class="form-control" id="playerEditNumber" min="1" max="99" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-futbol-o"></i> Mevki</label>
+                        <select class="form-control" id="playerEditPosition">
+                            <option value="Kaleci">Kaleci</option>
+                            <option value="Stoper">Stoper</option>
+                            <option value="Sağ Bek">Sağ Bek</option>
+                            <option value="Sol Bek">Sol Bek</option>
+                            <option value="Orta Saha">Orta Saha</option>
+                            <option value="Forvet">Forvet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-calendar"></i> Yaş</label>
+                        <input type="number" class="form-control" id="playerEditAge" min="16" max="45" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background: #f5f5f5; border-top: 1px solid #eee;">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> İptal</button>
+                <button type="button" class="btn btn-primary" style="background: #C8102E; border-color: #C8102E;" onclick="savePlayer()"><i class="fa fa-save"></i> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Staff Edit Modal -->
+<div class="modal fade" id="staffEditModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C8102E, #8B0000); color: #fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color: #fff; opacity: 1;"><span>&times;</span></button>
+                <h4 class="modal-title"><i class="fa fa-briefcase"></i> Teknik Ekip Düzenle</h4>
+            </div>
+            <div class="modal-body" style="padding: 25px;">
+                <form id="staffEditForm">
+                    <div class="form-group">
+                        <label><i class="fa fa-user"></i> Ad Soyad</label>
+                        <input type="text" class="form-control" id="staffEditName" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-briefcase"></i> Görev</label>
+                        <select class="form-control" id="staffEditRole">
+                            <option value="Teknik Direktör">Teknik Direktör</option>
+                            <option value="Yardımcı Antrenör">Yardımcı Antrenör</option>
+                            <option value="Kaleci Antrenörü">Kaleci Antrenörü</option>
+                            <option value="Kondisyoner">Kondisyoner</option>
+                            <option value="Fizyoterapist">Fizyoterapist</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background: #f5f5f5; border-top: 1px solid #eee;">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> İptal</button>
+                <button type="button" class="btn btn-primary" style="background: #C8102E; border-color: #C8102E;" onclick="saveStaff()"><i class="fa fa-save"></i> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Oyuncu düzenleme fonksiyonu
+    function editPlayer(name, number, position, age) {
+        event.preventDefault();
+        $('#playerEditName').val(name);
+        $('#playerEditNumber').val(number);
+        $('#playerEditPosition').val(position);
+        $('#playerEditAge').val(age);
+        $('#playerEditModal').modal('show');
+        return false;
+    }
+    
+    // Oyuncu kaydetme fonksiyonu
+    function savePlayer() {
+        var name = $('#playerEditName').val();
+        var number = $('#playerEditNumber').val();
+        var position = $('#playerEditPosition').val();
+        alert('Oyuncu başarıyla güncellendi!\n\nAd: ' + name + '\nNumara: ' + number + '\nMevki: ' + position);
+        $('#playerEditModal').modal('hide');
+    }
+    
+    // Teknik ekip düzenleme fonksiyonu
+    function editStaff(name, role) {
+        event.preventDefault();
+        $('#staffEditName').val(name);
+        $('#staffEditRole').val(role);
+        $('#staffEditModal').modal('show');
+        return false;
+    }
+    
+    // Teknik ekip kaydetme fonksiyonu
+    function saveStaff() {
+        var name = $('#staffEditName').val();
+        var role = $('#staffEditRole').val();
+        alert('Teknik ekip üyesi başarıyla güncellendi!\n\nAd: ' + name + '\nGörev: ' + role);
+        $('#staffEditModal').modal('hide');
+    }
+    
+    // Admin Çıkış fonksiyonu - sadece çıkış butonuna basınca çalışır
+    function adminLogout() {
+        if(confirm("Çıkış yapmak istediğinizden emin misiniz?")) {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminUser');
+            window.location.replace('../index.html');
+        }
+        return false;
+    }
+    
+    // Sayfa yüklendiğinde
+    $(document).ready(function() {
+        // Admin kullanıcı adını göster
+        var adminUser = localStorage.getItem('adminUser') || 'Admin';
+        $(".admin-user span").text(adminUser);
+    });
+    
+    $(".file-upload").click(function() {
+        $(this).find("input[type='file']").click();
+    });
+    
+    $(".admin-form").submit(function(e) {
+        e.preventDefault();
+        alert("Oyuncu başarıyla kaydedildi!");
+        this.reset();
+    });
+    
+    $(".btn-delete").click(function(e) {
+        e.preventDefault();
+        if(confirm("Bu oyuncuyu silmek istediğinizden emin misiniz?")) {
+            $(this).closest("tr").fadeOut();
+        }
+    });
+</script>
+</body>
+</html>
+

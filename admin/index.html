@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>window.scrollTo(0,0);</script>
+    <title>Admin Panel - 24 Erzincanspor</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body class="admin-body">
+<!-- Admin Sidebar -->
+<div class="admin-sidebar">
+    <div class="admin-logo">
+        <h3><i class="fa fa-futbol-o"></i> 24 ERZINCAN<span>SPOR</span></h3>
+    </div>
+    <nav class="admin-nav">
+        <span class="nav-label">Ana Menü</span>
+        <a href="index.html" class="active"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+        <a href="haberler.html"><i class="fa fa-newspaper-o"></i> <span>Haberler</span></a>
+        <a href="kadro.html"><i class="fa fa-users"></i> <span>Kadro</span></a>
+        <a href="urunler.html"><i class="fa fa-shopping-bag"></i> <span>Ürünler</span></a>
+        
+        <div class="nav-divider"></div>
+        <span class="nav-label">Ayarlar</span>
+        <a href="../index.html" target="_blank"><i class="fa fa-globe"></i> <span>Siteye Git</span></a>
+        <a href="#" onclick="return adminLogout();"><i class="fa fa-sign-out"></i> <span>Çıkış</span></a>
+    </nav>
+</div>
+
+<!-- Admin Content -->
+<div class="admin-content">
+    <!-- Header -->
+    <div class="admin-header">
+        <h2><i class="fa fa-dashboard"></i> Dashboard</h2>
+        <div class="admin-user">
+            <img src="../img/48.png" alt="Admin">
+            <span>Admin Kullanıcı</span>
+        </div>
+    </div>
+    
+    <!-- Alert Message -->
+    <div class="admin-alert success">
+        <i class="fa fa-check-circle"></i> Hoş geldiniz! Admin panelinize başarıyla giriş yaptınız.
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="stat-card-admin">
+                <i class="fa fa-newspaper-o"></i>
+                <h1>24</h1>
+                <p>Toplam Haber</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="stat-card-admin yellow">
+                <i class="fa fa-users"></i>
+                <h1>28</h1>
+                <p>Kadro Sayısı</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="stat-card-admin dark">
+                <i class="fa fa-shopping-bag"></i>
+                <h1>45</h1>
+                <p>Ürün Sayısı</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Quick Actions -->
+        <div class="col-sm-4">
+            <div class="admin-card">
+                <h3><i class="fa fa-bolt"></i> Hızlı İşlemler</h3>
+                <a href="haberler.html" class="quick-action">
+                    <i class="fa fa-plus-circle"></i>
+                    <div>
+                        <h5>Yeni Haber Ekle</h5>
+                        <p>Duyuru veya haber yayınlayın</p>
+                    </div>
+                </a>
+                <a href="kadro.html" class="quick-action">
+                    <i class="fa fa-user-plus"></i>
+                    <div>
+                        <h5>Oyuncu Ekle</h5>
+                        <p>Kadroya yeni oyuncu ekleyin</p>
+                    </div>
+                </a>
+                <a href="urunler.html" class="quick-action">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div>
+                        <h5>Ürün Ekle</h5>
+                        <p>Mağazaya yeni ürün ekleyin</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Recent News -->
+        <div class="col-sm-8">
+            <div class="admin-card">
+                <h3><i class="fa fa-newspaper-o"></i> Son Haberler</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Kategori</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yeni Sezon Formaları Satışta!</td>
+                            <td>04/12/2024</td>
+                            <td><span class="badge badge-primary">Duyuru</span></td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="viewNews(1, 'Yeni Sezon Formaları Satışta!', '04/12/2024', 'Duyuru', '2024-2025 sezonu resmi formalarımız mağazamızda satışa sunulmuştur. Kırmızı-siyah renklerimizi gururla taşıyan yeni formalarımız, en son teknoloji kumaşlardan üretilmiştir. Yetişkin forması ₺450, çocuk forması ₺350 fiyatla satılmaktadır.')">Görüntüle</a>
+                                <a href="#" class="btn-edit" onclick="editNews(1, 'Yeni Sezon Formaları Satışta!', '04/12/2024', 'Duyuru', '2024-2025 sezonu resmi formalarımız mağazamızda satışa sunulmuştur.')">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hafta Sonu Maç Programı</td>
+                            <td>02/12/2024</td>
+                            <td><span class="badge badge-warning" style="background: var(--secondary-color); color: #000;">Maç</span></td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="viewNews(2, 'Hafta Sonu Maç Programı', '02/12/2024', 'Maç', 'TFF 2. Lig 15. hafta karşılaşmamız bu Cumartesi günü oynanacak. Takımımız, sezonun kritik maçlarından birinde sahaya çıkacak. Maç saati: 14:00, Stadyum: Erzincan 13 Şubat Şehir Stadyumu.')">Görüntüle</a>
+                                <a href="#" class="btn-edit" onclick="editNews(2, 'Hafta Sonu Maç Programı', '02/12/2024', 'Maç', 'TFF 2. Lig 15. hafta karşılaşmamız bu Cumartesi günü oynanacak.')">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Transfer Dönemi Hazırlıkları</td>
+                            <td>30/11/2024</td>
+                            <td><span class="badge badge-info" style="background: #17a2b8;">Transfer</span></td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="viewNews(3, 'Transfer Dönemi Hazırlıkları', '30/11/2024', 'Transfer', 'Kulübümüz, ocak ayı transfer dönemi için hazırlıklarına başlamıştır. Teknik direktörümüzün talepleri doğrultusunda kadro takviyesi yapılacaktır. Özellikle orta saha ve forvet mevkilerine takviye planlanmaktadır.')">Görüntüle</a>
+                                <a href="#" class="btn-edit" onclick="editNews(3, 'Transfer Dönemi Hazırlıkları', '30/11/2024', 'Transfer', 'Kulübümüz, ocak ayı transfer dönemi için hazırlıklarına başlamıştır.')">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Altyapı Seçmeleri Başlıyor</td>
+                            <td>28/11/2024</td>
+                            <td><span class="badge badge-primary">Duyuru</span></td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="viewNews(4, 'Altyapı Seçmeleri Başlıyor', '28/11/2024', 'Duyuru', '2008-2012 doğumlu genç yetenekler için altyapı seçmeleri 15 Aralık tarihinde başlayacaktır. Seçmeler Erzincan 13 Şubat Şehir Stadyumu\'nda yapılacaktır. Katılım için kulüp binasından kayıt yaptırılması gerekmektedir.')">Görüntüle</a>
+                                <a href="#" class="btn-edit" onclick="editNews(4, 'Altyapı Seçmeleri Başlıyor', '28/11/2024', 'Duyuru', '2008-2012 doğumlu genç yetenekler için altyapı seçmeleri 15 Aralık tarihinde başlayacaktır.')">Düzenle</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Recent Messages -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="admin-card">
+                <h3><i class="fa fa-envelope"></i> Son Gelen Mesajlar</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Gönderen</th>
+                            <th>E-posta</th>
+                            <th>Konu</th>
+                            <th>Tarih</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ahmet Yılmaz</td>
+                            <td>ahmet@email.com</td>
+                            <td>Bilet Sorgulama</td>
+                            <td>04/12/2024 14:30</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="showMessage('Ahmet Yılmaz', 'ahmet@email.com', 'Bilet Sorgulama', '04/12/2024 14:30', 'Merhaba, 15 Aralık tarihindeki maç için bilet satın almak istiyorum. Kombine kart sahiplerine indirim var mı? Ayrıca stadyumda engelli tribünü bulunuyor mu? Bilgi verirseniz sevinirim. Teşekkürler.')">Oku</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mehmet Kaya</td>
+                            <td>mehmet@email.com</td>
+                            <td>Forma Siparişi</td>
+                            <td>03/12/2024 11:15</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="showMessage('Mehmet Kaya', 'mehmet@email.com', 'Forma Siparişi', '03/12/2024 11:15', 'İyi günler, geçen hafta sipariş ettiğim forma henüz elime ulaşmadı. Sipariş numaram: #12345. Kargonun durumu hakkında bilgi alabilir miyim? Teşekkür ederim.')">Oku</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ali Demir</td>
+                            <td>ali@email.com</td>
+                            <td>Altyapı Seçmeleri</td>
+                            <td>02/12/2024 09:45</td>
+                            <td class="action-btns">
+                                <a href="#" class="btn-view" onclick="showMessage('Ali Demir', 'ali@email.com', 'Altyapı Seçmeleri', '02/12/2024 09:45', 'Sayın yetkili, 12 yaşındaki oğlum için altyapı seçmelerine katılmak istiyoruz. Seçmelerin tarihi ve gerekli belgeler hakkında bilgi alabilir miyim? Oğlum 3 yıldır futbol oynuyor ve kaleci pozisyonunda. İletişim: 0532 XXX XX XX')">Oku</a>
+                                <a href="#" class="btn-delete">Sil</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News View Modal -->
+<div class="modal fade" id="newsViewModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C8102E, #8B0000); color: #fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color: #fff; opacity: 1;"><span>&times;</span></button>
+                <h4 class="modal-title"><i class="fa fa-newspaper-o"></i> Haber Detayı</h4>
+            </div>
+            <div class="modal-body" style="padding: 25px;">
+                <div class="news-info" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 id="newsViewTitle" style="margin: 0 0 10px 0; color: #333;"></h4>
+                    <p style="margin: 5px 0;"><strong><i class="fa fa-calendar"></i> Tarih:</strong> <span id="newsViewDate"></span></p>
+                    <p style="margin: 5px 0;"><strong><i class="fa fa-tag"></i> Kategori:</strong> <span id="newsViewCategory" class="badge badge-primary"></span></p>
+                </div>
+                <div class="news-content" style="background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 8px; min-height: 100px;">
+                    <p id="newsViewContent" style="line-height: 1.8; color: #333;"></p>
+                </div>
+            </div>
+            <div class="modal-footer" style="background: #f5f5f5; border-top: 1px solid #eee;">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News Edit Modal -->
+<div class="modal fade" id="newsEditModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C8102E, #8B0000); color: #fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color: #fff; opacity: 1;"><span>&times;</span></button>
+                <h4 class="modal-title"><i class="fa fa-edit"></i> Haber Düzenle</h4>
+            </div>
+            <div class="modal-body" style="padding: 25px;">
+                <form id="newsEditForm">
+                    <input type="hidden" id="newsEditId">
+                    <div class="form-group">
+                        <label><i class="fa fa-header"></i> Başlık</label>
+                        <input type="text" class="form-control" id="newsEditTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-calendar"></i> Tarih</label>
+                        <input type="text" class="form-control" id="newsEditDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-tag"></i> Kategori</label>
+                        <select class="form-control" id="newsEditCategory">
+                            <option value="Duyuru">Duyuru</option>
+                            <option value="Maç">Maç</option>
+                            <option value="Transfer">Transfer</option>
+                            <option value="Haber">Haber</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa fa-file-text"></i> İçerik</label>
+                        <textarea class="form-control" id="newsEditContent" rows="5" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="background: #f5f5f5; border-top: 1px solid #eee;">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> İptal</button>
+                <button type="button" class="btn btn-primary" style="background: #C8102E; border-color: #C8102E;" onclick="saveNews()"><i class="fa fa-save"></i> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Message Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #C8102E, #8B0000); color: #fff;">
+                <button type="button" class="close" data-dismiss="modal" style="color: #fff; opacity: 1;"><span>&times;</span></button>
+                <h4 class="modal-title"><i class="fa fa-envelope-open"></i> <span id="modalSubject">Mesaj Detayı</span></h4>
+            </div>
+            <div class="modal-body" style="padding: 25px;">
+                <div class="message-info" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="margin: 5px 0;"><strong><i class="fa fa-user"></i> Gönderen:</strong> <span id="modalSender"></span></p>
+                    <p style="margin: 5px 0;"><strong><i class="fa fa-envelope"></i> E-posta:</strong> <span id="modalEmail"></span></p>
+                    <p style="margin: 5px 0;"><strong><i class="fa fa-calendar"></i> Tarih:</strong> <span id="modalDate"></span></p>
+                </div>
+                <div class="message-content" style="background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 8px; min-height: 100px;">
+                    <p id="modalMessage" style="line-height: 1.8; color: #333;"></p>
+                </div>
+            </div>
+            <div class="modal-footer" style="background: #f5f5f5; border-top: 1px solid #eee;">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Kapat</button>
+                <button type="button" class="btn btn-primary" style="background: #C8102E; border-color: #C8102E;" onclick="replyMessage()"><i class="fa fa-reply"></i> Yanıtla</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Admin Çıkış fonksiyonu - sadece çıkış butonuna basınca çalışır
+    function adminLogout() {
+        if(confirm("Çıkış yapmak istediğinizden emin misiniz?")) {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminUser');
+            window.location.replace('../index.html');
+        }
+        return false;
+    }
+    
+    // Haber görüntüleme fonksiyonu
+    function viewNews(id, title, date, category, content) {
+        event.preventDefault();
+        $('#newsViewTitle').text(title);
+        $('#newsViewDate').text(date);
+        $('#newsViewCategory').text(category);
+        $('#newsViewContent').text(content);
+        $('#newsViewModal').modal('show');
+        return false;
+    }
+    
+    // Haber düzenleme fonksiyonu
+    function editNews(id, title, date, category, content) {
+        event.preventDefault();
+        $('#newsEditId').val(id);
+        $('#newsEditTitle').val(title);
+        $('#newsEditDate').val(date);
+        $('#newsEditCategory').val(category);
+        $('#newsEditContent').val(content);
+        $('#newsEditModal').modal('show');
+        return false;
+    }
+    
+    // Haber kaydetme fonksiyonu
+    function saveNews() {
+        var id = $('#newsEditId').val();
+        var title = $('#newsEditTitle').val();
+        var date = $('#newsEditDate').val();
+        var category = $('#newsEditCategory').val();
+        var content = $('#newsEditContent').val();
+        
+        // Burada normalde AJAX ile sunucuya gönderilir
+        alert('Haber başarıyla güncellendi!\n\nBaşlık: ' + title + '\nTarih: ' + date + '\nKategori: ' + category);
+        $('#newsEditModal').modal('hide');
+    }
+    
+    // Mesaj gösterme fonksiyonu
+    function showMessage(sender, email, subject, date, message) {
+        event.preventDefault();
+        $('#modalSender').text(sender);
+        $('#modalEmail').text(email);
+        $('#modalSubject').text(subject);
+        $('#modalDate').text(date);
+        $('#modalMessage').text(message);
+        $('#messageModal').modal('show');
+        return false;
+    }
+    
+    // Mesaj yanıtlama fonksiyonu
+    function replyMessage() {
+        var email = $('#modalEmail').text();
+        window.location.href = 'mailto:' + email;
+    }
+    
+    // Sayfa yüklendiğinde
+    $(document).ready(function() {
+        // Admin kullanıcı adını göster
+        var adminUser = localStorage.getItem('adminUser') || 'Admin';
+        $(".admin-user span").text(adminUser);
+        
+        // Table row click highlight
+        $(".admin-table tbody tr").click(function() {
+            $(this).toggleClass("selected");
+        });
+        
+        // Delete confirmation
+        $(".btn-delete").click(function(e) {
+            e.preventDefault();
+            if(confirm("Bu öğeyi silmek istediğinizden emin misiniz?")) {
+                $(this).closest("tr").fadeOut();
+            }
+        });
+    });
+</script>
+</body>
+</html>
+

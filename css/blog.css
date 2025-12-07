@@ -1,0 +1,207 @@
+/*
+24 Erzincanspor - Haberler Sayfası CSS
+*/
+
+/* Hero Section */
+.center_blog {
+    margin-top: 53px;
+    padding-top: 40px;
+    padding-bottom: 35px;
+    background: linear-gradient(rgba(200, 16, 46, 0.9), rgba(26, 26, 26, 0.9)), url('../img/8.png') center/cover;
+}
+
+.center_blog h3 {
+    color: #fff;
+}
+
+/* Blog Page Section */
+#blog_page {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+/* News Grid - Flexbox */
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-grid .col-sm-3 {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.blog_page_1i {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.blog_page_1i:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.blog_page_1i img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog_page_1ii {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog_page_1ii h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    min-height: 44px;
+}
+
+.blog_page_1ii h3 a {
+    color: var(--primary-color);
+}
+
+.blog_page_1ii h3 a:hover {
+    color: var(--dark-color);
+}
+
+.blog_page_1ii p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.blog_page_1ii ul {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.blog_page_1ii ul li {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.blog_page_1ii ul li i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.blog_page_1ii ul li a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* News Category Filter */
+.news-filter {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.news-filter .btn {
+    margin: 5px;
+    border-radius: 25px;
+    padding: 10px 25px;
+}
+
+.news-filter .btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.news-filter .btn-default {
+    background: #fff;
+    border-color: #ddd;
+}
+
+.news-filter .btn-default:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Pagination */
+.pagination-wrap {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination > li > a {
+    color: var(--primary-color);
+}
+
+.pagination > .active > a {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Featured News */
+.featured-news {
+    background: linear-gradient(135deg, var(--primary-color), #8B0000);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.featured-news .featured-img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.featured-news .featured-content {
+    padding: 30px;
+    color: #fff;
+}
+
+.featured-news .featured-content h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.featured-news .featured-content p {
+    color: rgba(255,255,255,0.8);
+}
+
+.featured-news .featured-content .badge {
+    background: var(--secondary-color);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .news-grid {
+        display: block;
+    }
+    
+    .news-grid .col-sm-3 {
+        display: block;
+        width: 100%;
+    }
+    
+    .blog_page_1ii h3 {
+        min-height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .news-grid .col-sm-3 {
+        width: 50%;
+    }
+}
+

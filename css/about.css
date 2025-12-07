@@ -1,0 +1,245 @@
+/*
+24 Erzincanspor - Hakkımızda Sayfası CSS
+*/
+
+/* Hero Section */
+.center_about {
+    background: linear-gradient(rgba(200, 16, 46, 0.8), rgba(26, 26, 26, 0.9)), url('../img/8.png') center/cover fixed;
+}
+
+/* About Page Section */
+#about_page {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.about_page_1 h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about_page_1 p.bold {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* League Section */
+#league {
+    padding: 0;
+}
+
+.league_m {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../img/8.png') center/cover fixed;
+    padding: 60px 0;
+}
+
+.league_1i {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.league_1i:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.league_1i img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.league_1i h4 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.league_1i p {
+    color: #ccc;
+}
+
+/* Story Section */
+#story {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.story_1 img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.story_1 h2 {
+    color: var(--primary-color);
+}
+
+/* League Other Section */
+#league_o .league_m {
+    background: linear-gradient(rgba(200, 16, 46, 0.9), rgba(139, 0, 0, 0.9)), url('../img/10.png') center/cover;
+}
+
+/* Contact About Section */
+#contact_ab {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.contact_ab_1l h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact_ab_1li {
+    margin-top: 20px;
+}
+
+.contact_ab_1li h5 {
+    margin-top: 0;
+}
+
+.contact_ab_1li h5 i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.contact_ab_1r iframe {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Timeline Section */
+#timeline {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: -40px;
+    width: 2px;
+    background: var(--primary-color);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.timeline-item span {
+    background: var(--secondary-color);
+    color: #000;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Values Section */
+#values {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--dark-color), #333);
+}
+
+.value-box {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.value-box:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-5px);
+}
+
+.value-box i {
+    font-size: 50px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.value-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.value-box p {
+    color: #ccc;
+}
+
+/* Management Section */
+#management {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.management-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.management-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.management-card h4 {
+    color: var(--primary-color);
+}
+
+.management-card h5 {
+    color: #666;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline-item::before {
+        left: 10px;
+    }
+    
+    .timeline-item::after {
+        left: 3px;
+    }
+}
+
